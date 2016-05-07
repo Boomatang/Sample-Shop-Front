@@ -1,0 +1,221 @@
+<DOCTYPE html>
+<html>
+  <head lang='en'>
+  <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <meta content="Sample of how to do a slide show">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Hard Coded Style sheets -->
+        <link rel='stylesheet'  type='text/css' href='css/style.css'>
+        <link rel='stylesheet' type='text/css' href='css/foundation.css'>
+        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css''>
+        
+        
+    <!--  End Hard Coded -->
+    
+    <!-- Some links used in side flask -->
+    <!--
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    -->
+    
+    
+    <style></style>
+  </head>
+  <body>
+  
+  
+  <div id='container'>
+  
+<!--   Header not bootstrap -->
+  <header>
+        <h1>Animated Photo Banner</h1>
+        <p> Lorem ipsum dolor...</p>
+        
+        
+        
+        
+    </header>
+<!--     Old header end -->
+
+
+<!-- Bootstap Nav Haeder -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+<!--         This image needs to be small like an icon not a brand image -->
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="products.html">Products</a></li>
+        <li role="presentation"><a href="#">News</a></li>
+        <li role="presentation"><a href="#">Contact Us</a></li>
+        <li role="presentation"><a href="account.html">Your Account</a></li>
+        
+        
+        <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+      
+			<h5>
+<!-- 			The cost should change this will be a flask thing -->
+			<a href="/cart/"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
+			
+<!--                     The next section of flask code should remove the not need buttons -->
+<!--             flask code -->
+<!--             {% if session.logged_in %} -->
+
+            <a class="active" href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+
+<!--                     flask code -->
+<!--             {% else %} -->
+
+		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+		    <a class="active" href="/register/"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    
+<!-- 		    flask code -->
+<!--             {% endif %} -->
+
+            </h5>
+	  </div>
+      </ul>
+        
+        </ul>
+  </div>
+</nav>
+<!-- End Bootstap Nav Header     -->
+    
+    
+    
+    
+    
+    
+    
+<!--    This block is used for the slide show. -->
+<!--    From the style.css there is 2 sections that is needed.
+                *** /* photobanner */ ***
+                *** /* keyframe animations */ ***
+-->
+<!--     Each image is 350px by 233px -->
+    <div class='photobanner''>
+        <img class='first' src='images/image-1.jpg' alt="">
+        <img src='images/image-2.jpg' alt=''>
+        <img src='images/image-3.jpg' alt=''>
+        <img src='images/image-4.jpg' alt=''>
+        <img src='images/image-5.jpg' alt=''>
+        <img src='images/image-6.jpg' alt=''>
+        <img src='images/image-1.jpg' alt=''>
+        <img src='images/image-2.jpg' alt=''>
+        <img src='images/image-3.jpg' alt=''>
+        <img src='images/image-4.jpg' alt=''>
+    </div>
+
+  <!--  End Slide Show -->
+  
+  
+<!--   New Products and items on sale -->
+<!-- This list needs to access a data base which has yet to be setup
+How that functions is yet to be seen -->
+  
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Products</h3>
+  </div>
+  <div class="panel-body">
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+ <!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+    
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+     <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+<!--   a product -->
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="list-group-item">
+     <img src="images/image_holder-171x180.png" alt="...">
+    <h5>Product Name</h5>
+     <h5>Price &euro;29.99</h5>
+    </a>    
+  </div>
+  
+  </div>
+  
+  
+  
+
+  
+</div>
+<!-- end of product show list -->
+  
+  
+  
+  
+  </div>
+  
+  <!-- Bootstap JS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <!-- End Bootstap JS -->
+  
+  </body>
+</html>

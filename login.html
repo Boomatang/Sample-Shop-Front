@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head lang='en'>
+  <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <meta content="Sample of how to do a slide show">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Hard Coded Style sheets -->
+        <link rel='stylesheet'  type='text/css' href='css/style.css'>
+        <link rel='stylesheet' type='text/css' href='css/foundation.css'>
+        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css''>
+        
+    <!--  End Hard Coded -->
+    
+    <!-- Some links used in side flask -->
+    <!--
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    -->
+    
+    
+    <style></style>
+  </head>
+  <body>
+  
+  
+  <div id='container'>
+  
+<!--   Header not bootstrap -->
+  <header>
+        <h1>Product View</h1>
+  </header>
+<!--     Old header end -->
+
+
+<!-- Bootstap Nav Haeder -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+<!--         This image needs to be small like an icon not a brand image -->
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" ><a href="index.html">Home</a></li>
+        <li role="presentation" class="active"><a href="products.html">Products</a></li>
+        <li role="presentation"><a href="#">News</a></li>
+        <li role="presentation"><a href="#">Contact Us</a></li>
+        <li role="presentation"><a href="account.html">Your Account</a></li>
+        
+        
+        <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+      
+			<h5>
+<!-- 			The cost should change this will be a flask thing -->
+			<a href="/cart/"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
+			
+<!--                     The next section of flask code should remove the not need buttons -->
+<!--             flask code -->
+<!--             {% if session.logged_in %} -->
+
+            <a class="active" href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+
+<!--                     flask code -->
+<!--             {% else %} -->
+
+		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+		    <a class="active" href="/register/"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    
+<!-- 		    flask code -->
+<!--             {% endif %} -->
+
+            </h5>
+	  </div>
+      </ul>
+        
+        </ul>
+  </div>
+</nav>
+<!-- End Bootstap Nav Header     -->
+    
+    
+<div class="container col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" style="text-align: center">    
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" style="text-align: center">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="text-align: center" >
+  </div>
+  <button type="submit" class="btn btn-success">Login</button>
+</form>
+</div>
+
+
+<div class="container col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" style="text-align: center"">
+<a class="active" href="/register/"><span class="glyphicon glyphicon-alert"></span> Forgot your pass word!</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="active" href="/register/"><span class="glyphicon glyphicon-pencil"></span> Register Now</a>
+</diV>
+
+
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  <!-- Bootstap JS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <!-- End Bootstap JS -->
+  
+  </body>
+</html>
