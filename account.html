@@ -9,7 +9,7 @@
     <!-- Hard Coded Style sheets -->
         <link rel='stylesheet'  type='text/css' href='css/style.css'>
         <link rel='stylesheet' type='text/css' href='css/foundation.css'>
-        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css''>
+        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css'>
         
     <!--  End Hard Coded -->
     
@@ -96,7 +96,6 @@
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Account Information</a></li>
   <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
-  <li role="presentation"><a href="#shipping" aria-controls="shipping" role="tab" data-toggle="tab">Update Contact Details</a></li>
 </ul>
 <!-- End list of tabs -->
 
@@ -106,7 +105,90 @@
         
 <!-- Overview Tab -->
       <div role="tabpanel" class="tab-pane fade in active" id="overview">
-      gufogpuhiuhiuh
+      
+      
+      <div class="container">
+	<div class="row">
+		 <form class="form-horizontal">
+            <fieldset>
+                <!-- Address form -->
+         
+                <h2>Postal Address</h2>
+         
+                <!-- full-name input-->
+                <div class="control-group">
+                    <label class="control-label">Full Name</label>
+                    <div class="controls">
+                        <input id="full-name" name="full-name" type="text" placeholder="full name"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- address-line1 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 1</label>
+                    <div class="controls">
+                        <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                        class="input-xlarge">
+                        <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                    </div>
+                </div>
+                <!-- address-line2 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 2</label>
+                    <div class="controls">
+                        <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                        class="input-xlarge">
+                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                    </div>
+                </div>
+                <!-- city input-->
+                <div class="control-group">
+                    <label class="control-label">City / Town</label>
+                    <div class="controls">
+                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- region input-->
+                <div class="control-group">
+                    <label class="control-label">State / Province / Region</label>
+                    <div class="controls">
+                        <input id="region" name="region" type="text" placeholder="state / province / region"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- postal-code input-->
+                <div class="control-group">
+                    <label class="control-label">Zip / Postal Code</label>
+                    <div class="controls">
+                        <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- country select -->
+                <div class="control-group">
+                    <label class="control-label">Country</label>
+                    <div class="controls">
+                        <select id="country" name="country" class="input-xlarge">
+                            <option value="" selected="selected">(please select a country)</option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="container">
+            	<input type="button" class="btn btn-primary" value="Update Postal Address" >
+				</div>        
+        </form>
+	</div>
+</div>
       </div>
 <!-- End Overview Tab -->
 
@@ -116,97 +198,7 @@
       </div>
 <!-- End Orders Tab -->
       
-<!-- Contact Details -->
-      <div role="tabpanel" class="tab-pane fade " id="shipping">
-      
-      
-      <table>
 
-<tr id="enterAddressFullNameContainer">
-<td class="">
-<span>
-<label for="enterAddressFullName"><b>Full name:&nbsp;</b></label>
-</span>
-</td>
-<td>
-<span>
-<input type="text" name="enterAddressFullName" id="enterAddressFullName" class="" size="50" maxlength="50">
-</td>
-</tr>
-
-<tr>
-</span><br><div id="enterAddressFullNameDescription"><span class="tiny"></span></div></td></tr>
-<tr id="enterAddressAddressLine1Container"><td class=""><span><label for="enterAddressAddressLine1"><b>Address Line 1:&nbsp;</b><br><font size="-2">(or company name)</font></label></span></td><td><span>
-<input type="text" name="enterAddressAddressLine1" id="enterAddressAddressLine1" class="" size="50" maxlength="60"></span>
-</div>
-</tr>
-
-<tr id="enterAddressAddressLine2Container"><td class=""><span><label for="enterAddressAddressLine2"><b>Address Line 2:&nbsp;</b><br><font size="-2">(optional)</font></label></span></td><td><span>
-<input type="text" name="enterAddressAddressLine2" id="enterAddressAddressLine2" class="" size="50" maxlength="60"></span>
-</tr>
-
-
-<tr id="enterAddressCityContainer"><td class=""><span><label for="enterAddressCity"><b>Town/City:&nbsp;</b></label></span></td><td><span>
-<input type="text" name="enterAddressCity" id="enterAddressCity" class="" size="25" maxlength="50"></span>
-</tr>
-
-
-
-<tr id="enterAddressStateOrRegionContainer"><td class=""><span><label for="enterAddressStateOrRegion"><b>County:&nbsp;</b></label></span></td><td><span>
-<input type="text" name="enterAddressStateOrRegion" id="enterAddressStateOrRegion" class="" size="15" maxlength="50">
-</span>
-</tr>
-
-<tr id="enterAddressPostalCodeContainer"><td class=""><span><label for="enterAddressPostalCode"><b>Postcode:&nbsp;</b></label></span></td><td><span>
-<input type="text" name="enterAddressPostalCode" id="enterAddressPostalCode" class="" size="20" maxlength="20">
-</span></tr>
-
-
-<tr id="enterAddressCountryCodeContainer"><td class=""><span><label for="enterAddressCountryCode"><b>Country:&nbsp;</b></label></span></td><td><span>
-
-<!--       Not the full list -->
-  <select name="enterAddressCountryCode" class="" id="enterAddressCountryCode">
-<option value="">--</option>
-<option value="AL">Albania</option>
-<option value="DZ">Algeria</option>
-<option value="AS">American Samoa</option>
-<option value="AD">Andorra</option>
-<option value="AO">Angola</option>    
-      
-<option value="VN">Vietnam</option>
-<option value="VG">Virgin Islands, British</option>
-<option value="VI">Virgin Islands, US</option>
-<option value="WF">Wallis and Futuna</option>
-<option value="EH">Western Sahara</option>
-<option value="YE">Yemen</option>
-<option value="ZM">Zambia</option>
-<option value="ZW">Zimbabwe</option>
-</select>      
-      
-</span>
-
-</tr>
-
-
-<tr id="enterAddressPhoneNumberContainer"><td class=""><span><label for="enterAddressPhoneNumber"><b>Phone number:&nbsp;</b></label></span></td><td><span>
-
-
-<input type="text" name="enterAddressPhoneNumber" id="enterAddressPhoneNumber" class="" size="15" maxlength="20">
-</span></tr>
-
-
-<tr>
-          <td width="10%" style="padding-left:10px">
-              <span class="btn btn-succes" unselectable="on"><span><input class="btn btn-success" type="submit" value="Save and Continue" name="newAddress" id="myab_newAddressButton"></span></span>
-          </td>
-      </tr>
-
-
-
-</table>
-      
-      </div>
-<!-- End Of Contact Details -->
 </div>
 <!-- End Tab Content -->
       
