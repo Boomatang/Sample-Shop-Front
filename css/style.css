@@ -1,4 +1,19 @@
 
+.no-padding {
+	margin: 0;
+	padding: 0;
+}
+
+.tempbox {
+	border: 5px solid black;
+}
+
+.cart {
+	width: 120px;
+	height: 120px
+	
+}
+
 body {
     /*     src: http://subtlepatterns.com/?p1045 */
     background: url('../images/dark_geometric.png');
