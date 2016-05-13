@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head lang='en'>
+  <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <meta content="Sample of how to do a slide show">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Hard Coded Style sheets -->
+        <link rel='stylesheet'  type='text/css' href='../css/style.css'>
+        <link rel='stylesheet' type='text/css' href='../css/foundation.css'>
+        <link rel='stylesheet'  type='text/css' href='../css/bootstrap.min.css'>
+        
+    <!--  End Hard Coded -->
+    
+    <!-- Some links used in side flask -->
+    <!--
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    -->
+    
+    
+    <style></style>
+  </head>
+  <body>
+  <div  id='container'>
+  
+  
+
+
+
+<div class="container col-md-10 col-md-push-1">
+<ul class="list-unstyled">
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product title</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	</li>
+	<hr>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+  
+  <!-- Bootstap JS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- End Bootstap JS -->
+  
+  </body>
+</html>
