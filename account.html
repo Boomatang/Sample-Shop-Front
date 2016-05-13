@@ -61,7 +61,7 @@
       
 			<h5>
 <!-- 			The cost should change this will be a flask thing -->
-			<a href="/cart/"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
+			<a href="cart.html"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
 			
 <!--                     The next section of flask code should remove the not need buttons -->
 <!--             flask code -->
@@ -73,7 +73,7 @@
 <!--             {% else %} -->
 
 		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
-		    <a class="active" href="/register/"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    <a class="active" href="register.html"><span class="glyphicon glyphicon-pencil"></span> Register</a>
 		    
 <!-- 		    flask code -->
 <!--             {% endif %} -->
@@ -96,6 +96,9 @@
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Account Information</a></li>
   <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
+  <li role="presentation"><a href="#addproduct" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Add Products</a></li>
+  <li role="presentation"><a href="#admin-product-list" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product List</a></li>
+  <li role="presentation"><a href="#admin-product-orders" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product 	Orders</a></li>
 </ul>
 <!-- End list of tabs -->
 
@@ -109,6 +112,8 @@
       
       <div class="container bottom-spacing">   
 	<div class="row col-md-8 col-md-offset-2">
+	<!-- TODO: Read the P tag for more information -->
+	<p>Work needed. There should be clear and different areas for user to update their user name? (this mite not be allowed), Update their email address, to change their current password and also to make changes to there shipping address</p>
 	
 	
 	<form class="form-horizontal">
@@ -282,13 +287,211 @@
 
 <!-- Orders Tab -->
       <div role="tabpanel" class="tab-pane fade " id="orders">
-      gufogpuhiuh
+      <h3>He the user can see the orders that then have placed in the past.</h3>
+      <p>How this will look I do not know. If for now it shows a list that will bring the user to a page that is very like the cart page for review</p>
       </div>
 <!-- End Orders Tab -->
+
+
+
+
+
+<!-- Tab content for the add product page. This page should only have access from admins -->
+
+<div role="tabpanel" class="tab-pane fade " id="addproduct">
+      
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add Products</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Product Name</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Product Name" class="form-control input-md">
+  <span class="help-block">What is the display name of you product</span>  
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="proDesc">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="proDesc" name="proDesc">Product Description</textarea>
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uploadimage">Upload Image</label>
+  <div class="col-md-4">
+    <input id="uploadimage" name="uploadimage" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cost">Cost</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">EUR</span>
+      <input id="cost" name="cost" class="form-control" placeholder="000.00" type="text">
+    </div>
+    <p class="help-block">What is the sale value of the product</p>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="postgroup">Shipping Cost</label>
+  <div class="col-md-4">
+    <select id="postgroup" name="postgroup" class="form-control">
+      <option value="1">Cost 1</option>
+      <option value="2">Cost 2</option>
+      <option value="3">Cost 3</option>
+    </select>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="forsale">Place product for sale on upload.</label>
+  <div class="col-md-4">
+    <label class="checkbox-inline" for="forsale-0">
+      <input type="checkbox" name="forsale" id="forsale-0" value="Yes">
+      Yes
+    </label>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+      
+      </div>
+
+
+
+<!-- List of products that have been added. user can do small updates here -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-list">
+      <h2>Here a admin can view their products</h2>
+   <ul class="list-unstyled">
+	
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title One</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+		
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title Two</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+		
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title Three</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+</ul></div>
+
+
+
+
+<!-- Orders that the admin has. -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-orders">
+      <h3>product Orders</h3>
+      <p>I do not know if the this should only show current open order or if it should show past orders too.</p>
+      <p>Work is need to be done here but I feel that feed back could be need on what is the best way of layout out the few that pages that go here. Some points that mite be wrote noting are:</p>
+      <ul>
+      <li>An email will want to be able to be sent to the person that bought the products</li>
+      <li>Some way of sending email to the user if there is a problem with the order</li>
+      <li>price, shipping, order date & time and etc..</li>
+      </ul>
+      </div>
+
+
+
       
 
 </div>
 <!-- End Tab Content -->
+      
+      
+      
+      
+      
+      
+      
       
 
 </div>
