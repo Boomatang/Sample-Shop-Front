@@ -29,33 +29,39 @@
 
 
 
-<div class="container col-md-10 col-md-push-1">
-<ul class="list-unstyled">
-	<li>
-	<div class="container">
-	<div class="col-md-3 text-center">
-	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
-	</div>	
-	<div class="col-md-6">
-	<h2>Product title</h2>
-	<p>This would be the description of the product</p>
-	<p>Cost: &euro; 35.00</p>
-	<p>Shipping class: class 1</p>
-	</div>
-	
-	<div class="col-md-3">
-	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
-	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
-	</div>	
+<div class="container col-md-12 ">
+<div class="col-md-5 col-md-push-6">
+    <div class="form-area">  
+        <form role="form">
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+    				<div class="form-group">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+					</div>
+                    <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                    </div>
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+        </form>
+    </div>
+</div>
 
-	<div class="col-md-3">
-	<input type="button" name="EditProduct" value="Edit Product" class="btn">
-	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
-	</div>
-	</div>
-	</li>
-	<hr>
-</ul>
+
+<div class="container col-md-6 col-md-pull-5">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6137.953087248313!2d-6.6841684542590984!3d52.56504532866502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d55bb2918680b%3A0x575140ce5df1fe65!2sBallindaggan%2C+Co.+Wexford!5e0!3m2!1sen!2sie!4v1463172880472" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
 
 </div>
 
