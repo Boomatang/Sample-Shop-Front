@@ -1,3 +1,14 @@
+.border-light {
+	border: 1px rgb(221, 221, 221) solid;
+	border-radius: 3px;	
+
+	}
+	
+.small-padding {
+	margin: 2px;
+	padding-top: 3px;
+}
+
 footer a, footer p {
 	color: rgba(255, 255, 255, 0.45);
 	}
