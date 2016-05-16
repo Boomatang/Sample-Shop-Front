@@ -5,4 +5,7 @@ from . import testing
 
 @testing.route("/")
 def testing():
-    return render_template("base/base.html")
+
+    values = range(0, 8)
+
+    return render_template("main/index.html", list=values)

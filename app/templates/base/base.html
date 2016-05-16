@@ -15,14 +15,44 @@
 
 
 
+{% include "base/_header.html" %}
 {% include "base/_nav.html" %}
 
 
+{% block myContent %}
+<h1>what is going on</h1>
+<h1>what is going on</h1>
+<h1>what is going on</h1>
+<h1>what is going on</h1>
+{% endblock %}
 
-<h1>what is going on</h1>
-<h1>what is going on</h1>
-<h1>what is going on</h1>
-<h1>what is going on</h1>
+{% include "base/_footer.html" %}
+
+
+
 
 </div>
+
+{% block scripts %}
+{{ super() }}
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jMyCarousel/jquery-1.2.1.pack.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jMyCarousel/jMyCarousel.js') }}"></script>
+
+  	<script type="text/javascript">
+		$(function() {
+		    $(".jMyCarousel").jMyCarousel({
+		        visible: '100%',
+				auto: true,
+				speed: 700
+		    });
+		});
+	</script>	
+	
+	
 {% endblock %}
+
+
+
+{% endblock %}
+

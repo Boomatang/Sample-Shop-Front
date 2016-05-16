@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}Sample Shop Home Page {% endblock %}
+
+{% block myContent %}
+{% include "base/_slide-show.html" %}
+
+
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">New Products</h3>
+  </div>
+  <div class="panel-body">
+
+
+{% for i in list %}
+{% include "index/_index-product-view.html" %}
+{% endfor %}
+
+
+</div>
+</div>
+
+{% endblock %}
+
