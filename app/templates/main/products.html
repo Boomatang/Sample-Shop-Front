@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+{% block myContent %}
+
+<div class="row padding-sides">
+
+{% for i in list %}
+{% include "product/_product-preview.html" %}
+{% endfor %}
+
+</div>
+{% endblock %}

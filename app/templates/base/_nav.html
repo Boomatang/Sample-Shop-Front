@@ -10,8 +10,12 @@
       </a>
     </div>
     <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="index.html">Home</a></li>
-        <li role="presentation"><a href="products.html">Products</a></li>
+    
+    
+        <li role="presentation" {% if request.url_rule.endpoint == "main.index" %}class="active"{% endif %}>
+        <a href="{{ url_for('main.index') }}">Home</a></li>
+        <li role="presentation" {% if request.url_rule.endpoint == "main.products" %}class="active"{% endif %}>
+        <a href="{{ url_for('main.products') }}">Products</a></li>
         <li role="presentation"><a href="#">News</a></li>
         <li role="presentation"><a href="contact.html">Contact Us</a></li>
         <li role="presentation"><a href="account.html">Your Account</a></li>
