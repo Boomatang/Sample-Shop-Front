@@ -27,3 +27,9 @@ class MainRoutesTestCase(unittest.TestCase):
 
     def test_register(self):
         self.assertTrue(self.client.get(url_for('auth.register')))
+
+    def test_login(self):
+        self.assertTrue(self.client.get(url_for('auth.login')))
+
+    def test_logout(self):
+        self.assertTrue(self.client.get(url_for('auth.logout')))

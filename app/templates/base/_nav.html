@@ -30,10 +30,10 @@
 			<a href="cart.html"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
 			
 
-            <a class="active" href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+            <a class="active" href="{{ url_for('auth.logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
 
 
-		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+		    <a class="active" href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
 		    <a class="active" href="{{ url_for('auth.register') }}"><span class="glyphicon glyphicon-pencil"></span> Register</a>
 
             </h5>

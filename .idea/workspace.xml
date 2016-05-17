@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="226ab249-e371-416f-894a-e5fdb9f388bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/auth/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/auth/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/auth/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/base/_header.html" afterPath="$PROJECT_DIR$/app/templates/base/_header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/views.py" afterPath="$PROJECT_DIR$/app/auth/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/base/_nav.html" afterPath="$PROJECT_DIR$/app/templates/base/_nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_main_routes.py" afterPath="$PROJECT_DIR$/tests/test_main_routes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/app___init___py.html" afterPath="$PROJECT_DIR$/tmp/coverage/app___init___py.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/app_main_views_py.html" afterPath="$PROJECT_DIR$/tmp/coverage/app_main_views_py.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/app_testing_views_py.html" afterPath="$PROJECT_DIR$/tmp/coverage/app_testing_views_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/app_auth_views_py.html" afterPath="$PROJECT_DIR$/tmp/coverage/app_auth_views_py.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/index.html" afterPath="$PROJECT_DIR$/tmp/coverage/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/coverage/status.json" afterPath="$PROJECT_DIR$/tmp/coverage/status.json" />
     </list>
@@ -82,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_main_routes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_main_routes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_main_routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+            <state relative-caret-position="594">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,13 +94,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/auth/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,8 +138,8 @@
         <option value="$PROJECT_DIR$/app/main/views.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/auth/__init__.py" />
-        <option value="$PROJECT_DIR$/app/auth/views.py" />
         <option value="$PROJECT_DIR$/tests/test_main_routes.py" />
+        <option value="$PROJECT_DIR$/app/auth/views.py" />
       </list>
     </option>
   </component>
@@ -612,7 +604,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -752,21 +744,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_main_routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="594">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_main_routes.py">
+    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding />
+        <state relative-caret-position="288">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
