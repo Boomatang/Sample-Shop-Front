@@ -1,0 +1,6 @@
+export SECRET_KEY="poygvfyouvyo bpiuh piughg7u087gbeqwput i4thh7 541wer6g16104 aqpk eboiubo jh ug3tuy voubn gf "
+export SITE_CONFIG=development
+export SITE_COVERAGE=True
+export SITE_ADMIN=jimfity@gmail.com
+export MAIL_USERNAME=jimfity@gmail.com
+export MAIL_PASSWORD=

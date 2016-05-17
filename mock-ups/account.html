@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+  <head lang='en'>
+  <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <meta content="Sample of how to do a slide show">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Hard Coded Style sheets -->
+        <link rel='stylesheet'  type='text/css' href='css/style.css'>
+        <link rel='stylesheet' type='text/css' href='css/foundation.css'>
+        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css'>
+        
+    <!--  End Hard Coded -->
+    
+    <!-- Some links used in side flask -->
+    <!--
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    -->
+    
+    
+    <style></style>
+  </head>
+  <body>
+  
+  
+  <div id='container'>
+  
+<!--   Header not bootstrap -->
+  <header>
+        <h1>Your Account</h1>
+        <p> Lorem ipsum dolor...</p>
+        
+        
+        
+        
+    </header>
+<!--     Old header end -->
+
+
+<!-- Bootstap Nav Haeder -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+<!--         This image needs to be small like an icon not a brand image -->
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" ><a href="index.html">Home</a></li>
+        <li role="presentation" ><a href="products.html">Products</a></li>
+        <li role="presentation"><a href="#">News</a></li>
+        <li role="presentation"><a href="contact.html">Contact Us</a></li>
+        <li role="presentation" class="active"><a href="account.html">Your Account</a></li>
+        
+        
+        <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+      
+			<h5>
+<!-- 			The cost should change this will be a flask thing -->
+			<a href="cart.html"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
+			
+<!--                     The next section of flask code should remove the not need buttons -->
+<!--             flask code -->
+<!--             {% if session.logged_in %} -->
+
+            <a class="active" href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+
+<!--                     flask code -->
+<!--             {% else %} -->
+
+		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+		    <a class="active" href="register.html"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    
+<!-- 		    flask code -->
+<!--             {% endif %} -->
+
+            </h5>
+	  </div>
+      </ul>
+        
+        </ul>
+  </div>
+</nav>
+<!-- End Bootstap Nav Header     -->
+   
+   
+   
+<!-- Account details start here -->
+<div class="container padding-sides">
+
+<!-- List of tabs -->
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Account Information</a></li>
+  <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
+  <li role="presentation"><a href="#addproduct" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Add Products</a></li>
+  <li role="presentation"><a href="#admin-product-list" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product List</a></li>
+  <li role="presentation"><a href="#admin-product-orders" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product 	Orders</a></li>
+</ul>
+<!-- End list of tabs -->
+
+
+<!-- Tab Content -->
+<div class="tab-content">
+        
+<!-- Overview Tab -->
+      <div role="tabpanel" class="tab-pane fade in active" id="overview">
+      
+      
+      <div class="container bottom-spacing">   
+	
+	<!-- TODO: Read the P tag for more information -->
+	<p>Work needed. There should be clear and different areas for user to update their user name? (this mite not be allowed), Update their email address, to change their current password and also to make changes to there shipping address</p>
+	
+	
+	<div class="container col-md-12">
+	<!-- form to update the user name -->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Update User Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">New User Name</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="User Name" class="form-control input-md">
+  <span class="help-block">This will need a checking function </span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Password</label>
+  <div class="col-md-4">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="Confirm Password" class="form-control input-md">
+    <span class="help-block">You need to confirm your password to change your User Name</span>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Change User Name</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+	</div>	
+	
+	
+<div class="container col-md-12">
+<!-- form to update the users email addess -->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Update Email Address</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">New Email Address</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Email Address" class="form-control input-md">
+  <span class="help-block">Please enter a new email address</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Confirm Email Address</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Email Address" class="form-control input-md">
+  <span class="help-block">Please confirm the email address</span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Password</label>
+  <div class="col-md-4">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="Confirm Password" class="form-control input-md">
+    <span class="help-block">You need to confirm your password to change your Email Address</span>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Change Email Address</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</div>
+
+
+<div class="conainter col-md-12">
+<!-- user can update their password with this form -->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Update Password</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">New Password</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="password" placeholder="Password" class="form-control input-md">
+  <span class="help-block">Please enter a new password</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Confirm New Password</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="password" placeholder="Password" class="form-control input-md">
+  <span class="help-block">Please confirm the new password</span>  
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="passwordinput">Old Password</label>
+  <div class="col-md-4">
+    <input id="passwordinput" name="passwordinput" type="password" placeholder="Old Password" class="form-control input-md">
+    <span class="help-block">To change your password you most enter your old password</span>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-danger">Change Password</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</div>
+
+	
+<div class="conainter col-md-12">
+<!-- update the users postal address -->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Update Postal Address</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">First Name</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="First Name" class="form-control input-md">
+  <span class="help-block">Your first name</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Surname</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Surname" class="form-control input-md">
+  <span class="help-block">Your Surname</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="AddressLine1">Address Line 1</label>  
+  <div class="col-md-4">
+  <input id="AddressLine1" name="AddressLine1" type="text" placeholder="Address Line 1" class="form-control input-md">
+  <span class="help-block">Street address, P.O. box, company name</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Address Line 2</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Address Line 2" class="form-control input-md">
+  <span class="help-block">Apartment, suite, unit, building, floor, etc.</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">City / Town</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="City / Town" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">State / Province / Region</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="State / Province / Region" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Zip / Postal Code</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Zip / Postal Code" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Country</label>
+  <div class="col-md-4">
+  
+  
+    <select id="selectbasic" name="selectbasic" class="form-control">
+
+
+      <option value="" selected="selected">(please select a country)</option>
+      <option value="AF">Afghanistan</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>>
+
+
+    </select>
+
+
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-success">Update Postal Address</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+</div>
+	
+	</div>
+	</div>
+<!-- End Overview Tab -->
+
+<!-- Orders Tab -->
+      <div role="tabpanel" class="tab-pane fade " id="orders">
+      <h3>He the user can see the orders that then have placed in the past.</h3>
+      <p>How this will look I do not know. If for now it shows a list that will bring the user to a page that is very like the cart page for review</p>
+      </div>
+<!-- End Orders Tab -->
+
+
+
+
+
+<!-- Tab content for the add product page. This page should only have access from admins -->
+
+<div role="tabpanel" class="tab-pane fade " id="addproduct">
+      
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add Products</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Product Name</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Product Name" class="form-control input-md">
+  <span class="help-block">What is the display name of you product</span>  
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="proDesc">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="proDesc" name="proDesc">Product Description</textarea>
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uploadimage">Upload Image</label>
+  <div class="col-md-4">
+    <input id="uploadimage" name="uploadimage" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cost">Cost</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">EUR</span>
+      <input id="cost" name="cost" class="form-control" placeholder="000.00" type="text">
+    </div>
+    <p class="help-block">What is the sale value of the product</p>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="postgroup">Shipping Cost</label>
+  <div class="col-md-4">
+    <select id="postgroup" name="postgroup" class="form-control">
+      <option value="1">Cost 1</option>
+      <option value="2">Cost 2</option>
+      <option value="3">Cost 3</option>
+    </select>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="forsale">Place product for sale on upload.</label>
+  <div class="col-md-4">
+    <label class="checkbox-inline" for="forsale-0">
+      <input type="checkbox" name="forsale" id="forsale-0" value="Yes">
+      Yes
+    </label>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+      
+      </div>
+
+
+
+<!-- List of products that have been added. user can do small updates here -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-list">
+      <h2>Here a admin can view their products</h2>
+   <ul class="list-unstyled">
+	
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title One</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+		
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title Two</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+		
+	<li>
+	<div class="container">
+	<div class="col-md-3 text-center">
+	<a href="../images/image_holder-75x90.png"><img src="../images/image_holder-75x90_thumbnail.jpeg" width="90" height="120" border="0" align="middle"></a>
+	</div>	
+	<div class="col-md-6">
+	<h2>Product Title Three</h2>
+	<p>This would be the description of the product</p>
+	<p>Cost: &euro; 35.00</p>
+	<p>Shipping class: class 1</p>
+	</div>
+	
+	<div class="col-md-3">
+	<p><input type="checkbox" name="IsActive" value="Is Active" checked> Product is currently for sale.</p>
+	<p><input type="checkbox" name="discount" value="discount"> Add 10% discount.</p>
+	</div>	
+
+	<div class="col-md-3">
+	<input type="button" name="EditProduct" value="Edit Product" class="btn">
+	<input type="button" name="QuickUpdate" value="Quick Update" class="btn btn-warning">
+	</div>
+	</div>
+	<hr>
+	</li>
+</ul></div>
+
+
+
+
+<!-- Orders that the admin has. -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-orders">
+      <h3>product Orders</h3>
+      <p>I do not know if the this should only show current open order or if it should show past orders too.</p>
+      <p>Work is need to be done here but I feel that feed back could be need on what is the best way of layout out the few that pages that go here. Some points that mite be wrote noting are:</p>
+      <ul>
+      <li>An email will want to be able to be sent to the person that bought the products</li>
+      <li>Some way of sending email to the user if there is a problem with the order</li>
+      <li>price, shipping, order date & time and etc..</li>
+      </ul>
+      </div>
+
+
+
+      
+
+</div>
+<!-- End Tab Content -->
+      
+      
+      
+      
+      
+      
+      
+      
+
+</div>
+    
+<footer class="col-md-12">
+<hr>
+
+<div class="col-md-2">
+	<p class="no-padding">Company Name</p>
+	<p class="no-padding">Address Line 1</p>
+	<p class="no-padding">Address Line 2</p>
+	<p class="no-padding">City</p>
+	<p class="no-padding">State</p>
+	<p class="no-padding">Copyright: 2016 &copy;</p>
+</div>
+
+<div class="col-md-3 text-center">
+	<ul class="list-unstyled">
+	<li><h3>Your Links</h3></li>
+	<a href="account.html"><li>Account Details</li></a>
+	<a href="account.html"><li>Order History</li></a>
+	<a href="account.html"><li>Products</li></a>
+	</ul>
+</div>
+<div class="col-md-3 text-center">
+	<ul class="list-unstyled">
+	<li><h3>Small Print</h3></li>
+	<a href="terms.html"><li>Terms & conditions</li></a>
+	<a href="terms.html#Delivery"><li>Delivery Terms</li></a>
+	<a href="terms.html#return"><li>Return Policy</li></a>
+	</ul>
+</div>
+<div class="col-md-3 text-center">
+	<ul class="list-unstyled">
+	<li><h3>Our Support</h3></li>
+	<a href="about-us.html"><li>About Us</li></a>
+	<a href="contact.html"><li>Contact Us</li></a>
+	<a href="site-map.html"><li>Site Map</li></a>
+	</ul>
+</div>
+</footer>
+  
+    
+</div>
+
+
+  
+  <!-- Bootstap JS -->
+    <script type="text/javascript" src="js/MyJS.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- End Bootstap JS -->
+  
+  </body>
+</html>

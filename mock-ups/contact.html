@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head lang='en'>
+  <meta charset="UTF-8">
+    <title>Sample Home Page</title>
+    <meta content="Sample of how to do a slide show">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Hard Coded Style sheets -->
+        <link rel='stylesheet'  type='text/css' href='css/style.css'>
+        <link rel='stylesheet' type='text/css' href='css/foundation.css'>
+        <link rel='stylesheet'  type='text/css' href='css/bootstrap.min.css'>
+        
+    <!--  End Hard Coded -->
+    
+    <!-- Some links used in side flask -->
+    <!--
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    -->
+    
+    
+    <style></style>
+  </head>
+  <body>
+  
+  
+  <div id='container'>
+  
+<!--   Header not bootstrap -->
+  <header>
+        <h1>Product View</h1>
+  </header>
+<!--     Old header end -->
+
+
+<!-- Bootstap Nav Haeder -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+<!--         This image needs to be small like an icon not a brand image -->
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+    <ul class="nav nav-pills">
+        <li role="presentation" ><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="products.html">Products</a></li>
+        <li role="presentation"><a href="#">News</a></li>
+        <li role="presentation" class="active"><a href="contact.html">Contact Us</a></li>
+        <li role="presentation"><a href="account.html">Your Account</a></li>
+        
+        
+        <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+      
+			<h5>
+<!-- 			The cost should change this will be a flask thing -->
+			<a href="cart.html"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
+			
+<!--                     The next section of flask code should remove the not need buttons -->
+<!--             flask code -->
+<!--             {% if session.logged_in %} -->
+
+            <a class="active" href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
+
+<!--                     flask code -->
+<!--             {% else %} -->
+
+		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
+		    <a class="active" href="register.html"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    
+<!-- 		    flask code -->
+<!--             {% endif %} -->
+
+            </h5>
+	  </div>
+      </ul>
+        
+        </ul>
+  </div>
+</nav>
+<!-- End Bootstap Nav Header     -->
+    
+    
+<div class="container col-md-12">    
+
+
+<div class="container col-md-12 bottom-spacing">
+<div class="col-md-5 col-md-push-7">
+    <div class="form-area">  
+        <form role="form">
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+    				<div class="form-group">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+					</div>
+                    <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                    </div>
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="container col-md-6 col-md-pull-5">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6137.953087248313!2d-6.6841684542590984!3d52.56504532866502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d55bb2918680b%3A0x575140ce5df1fe65!2sBallindaggan%2C+Co.+Wexford!5e0!3m2!1sen!2sie!4v1463172880472" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    
+        	<footer class="col-md-12 row bottom-spacing">
+	<hr class="style-one">
+	<p>Copyright &copy;2016</p>
+	</footer> 
+
+ </div>
+
+ 
+ 
+ 
+  
+  <!-- Bootstap JS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <!-- End Bootstap JS -->
+  
+  </body>
+</html>
