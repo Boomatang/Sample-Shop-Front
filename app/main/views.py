@@ -14,3 +14,8 @@ def products():
     values = range(0, 25)
 
     return render_template("main/products.html", list=values)
+
+
+@main.route("/contact")
+def contact():
+    return render_template("main/contact.html")

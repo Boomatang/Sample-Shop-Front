@@ -16,5 +16,14 @@ class MainRoutesTestCase(unittest.TestCase):
     def test_index(self):
         self.assertTrue(self.client.get(url_for('main.index')))
 
+    def test_testing(self):
+        self.assertTrue(self.client.get(url_for('testing.testing')))
+
     def test_products(self):
         self.assertTrue(self.client.get(url_for('main.products')))
+
+    def test_contact_us(self):
+        self.assertTrue(self.client.get(url_for('main.contact')))
+
+    def test_register(self):
+        self.assertTrue(self.client.get(url_for('auth.register')))

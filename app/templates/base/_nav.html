@@ -17,7 +17,8 @@
         <li role="presentation" {% if request.url_rule.endpoint == "main.products" %}class="active"{% endif %}>
         <a href="{{ url_for('main.products') }}">Products</a></li>
         <li role="presentation"><a href="#">News</a></li>
-        <li role="presentation"><a href="contact.html">Contact Us</a></li>
+        <li role="presentation" {% if request.url_rule.endpoint == "main.contact" %}class="active"{% endif %}>
+        <a href="{{ url_for('main.contact') }}">Contact Us</a></li>
         <li role="presentation"><a href="account.html">Your Account</a></li>
         
         
@@ -33,7 +34,7 @@
 
 
 		    <a class="active" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
-		    <a class="active" href="register.html"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+		    <a class="active" href="{{ url_for('auth.register') }}"><span class="glyphicon glyphicon-pencil"></span> Register</a>
 
             </h5>
 	  </div>
