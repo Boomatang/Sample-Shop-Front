@@ -185,3 +185,8 @@ open of a deleted file
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+
+### My added items ####
+# Temp folder
+tmp/
+
