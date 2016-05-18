@@ -24,3 +24,9 @@ def contact():
 @main.route("/products/<item>")
 def product_view(item):
     return render_template("main/product-view.html")
+
+
+@main.route("/cart")
+def cart():
+    values = range(0, 4)
+    return render_template("main/cart.html", values=values)

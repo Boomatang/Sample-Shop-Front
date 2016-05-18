@@ -1,0 +1,26 @@
+<!-- Basic cart item layout-->
+<div class="container col-md-10 col-md-offset-1 row">
+    		<div class="container col-md-6 col-md-push-3 ">
+    			<div class="col-md-9 ">
+    				<h1>Product Title One</h1>
+    			</div>
+    			<div class="col-md-6 col-md-push-6 ">
+    				<p>Cost €50 Qty 5</p>
+	    		</div>
+	    	</div>
+	    	
+			<div class="col-md-3 col-md-push-3">
+				
+				<div class="col-md-12">
+				<input class="btn btn-danger btn-sm" type="button" value="Remove Item"/>
+				</div>
+				
+				<div class="col-md-3">				
+				<input class="btn btn-primary" type="button" value="Update Quantity"/>				
+				</div>
+			</div>	    	
+	    	
+    		<div class="col-md-3 col-md-pull-9 ">
+    			<img class="cart" name="Product Image" src="{{ url_for('static', filename='images/image_holder-171x180.png') }}">
+    		</div>
+    	</div>

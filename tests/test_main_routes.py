@@ -36,3 +36,6 @@ class MainRoutesTestCase(unittest.TestCase):
 
     def test_products_view(self):
         self.assertTrue(self.client.get((url_for('main.product_view', item='759325'))))
+
+    def test_cart(self):
+        self.assertTrue(self.client.get(url_for('main.cart')))

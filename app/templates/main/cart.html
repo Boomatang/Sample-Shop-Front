@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+{% block myContent %}
+
+<div class="row padding-sides bottom-spacing">
+
+{% for i in values %}
+{% include "cart/_cart-item.html" %}
+{% endfor %}
+{% include "cart/_cart-totals.html" %}
+
+</div>
+{% endblock %}
