@@ -19,3 +19,8 @@ def products():
 @main.route("/contact")
 def contact():
     return render_template("main/contact.html")
+
+
+@main.route("/products/<item>")
+def product_view(item):
+    return render_template("main/product-view.html")

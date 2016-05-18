@@ -33,3 +33,6 @@ class MainRoutesTestCase(unittest.TestCase):
 
     def test_logout(self):
         self.assertTrue(self.client.get(url_for('auth.logout')))
+
+    def test_products_view(self):
+        self.assertTrue(self.client.get((url_for('main.product_view', item='759325'))))
