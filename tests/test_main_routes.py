@@ -43,23 +43,3 @@ class MainRoutesTestCase(unittest.TestCase):
     def test_account(self):
         self.assertTrue(self.client.get(url_for('auth.account')))
 
-    def test_account_overview(self):
-        # TODO fix test to check page is correct
-        self.assertTrue(self.client.get(url_for('auth.account', section='overview')))
-
-
-    def test_account_orders(self):
-        # TODO fix test to check page is correct
-        self.assertTrue(self.client.get(url_for('auth.account', section='orders')))
-
-    def test_account_addproduct(self):
-        # TODO fix test to check page is correct
-        self.assertTrue(self.client.get(url_for('auth.account', section='addproduct')))
-
-    def test_account_admin_product_list(self):
-        # TODO fix test to check page is correct
-        self.assertTrue(self.client.get(url_for('auth.account', section='admin-product-list')))
-
-    def test_account_admin_product_orders(self):
-        # TODO fix test to check page is correct
-        self.assertTrue(self.client.get(url_for('auth.account', section='admin-product-orders')))
