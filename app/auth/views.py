@@ -17,3 +17,8 @@ def logout():
     return redirect(url_for('main.index'))
 
 
+@auth.route('/account')
+def account():
+    values = range(0, 5)
+    return render_template('auth/account.html', list=values)
+

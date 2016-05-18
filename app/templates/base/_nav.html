@@ -19,7 +19,8 @@
         <li role="presentation"><a href="#">News</a></li>
         <li role="presentation" {% if request.url_rule.endpoint == "main.contact" %}class="active"{% endif %}>
         <a href="{{ url_for('main.contact') }}">Contact Us</a></li>
-        <li role="presentation"><a href="account.html">Your Account</a></li>
+        <li role="presentation" {% if request.url_rule.endpoint == "auth.account" %}class="active"{% endif %}>
+        <a href="{{ url_for('auth.account') }}">Your Account</a></li>
         
         
         <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">

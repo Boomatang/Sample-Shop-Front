@@ -1,0 +1,136 @@
+{% extends "base/base.html" %}
+{% block myContent %}
+
+<div class="row padding-sides bottom-spacing">
+
+
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Account Information</a></li>
+  <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
+  <li role="presentation"><a href="#addproduct" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Add Products</a></li>
+  <li role="presentation"><a href="#admin-product-list" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product List</a></li>
+  <li role="presentation"><a href="#admin-product-orders" aria-controls="orders" role="tab" data-toggle="tab">Admin Only - Product 	Orders</a></li>
+</ul>
+
+
+
+
+<!-- Block of data-->
+
+<!-- Tab Content -->
+<div class="tab-content">
+        
+<!-- Overview Tab -->
+      <div role="tabpanel" class="tab-pane fade in active" id="overview">
+    
+	<!-- TODO: Read the P tag for more information -->
+	<p>Work needed. There should be clear and different areas for user to update their user name? (this mite not be allowed), Update their email address, to change their current password and also to make changes to there shipping address</p>
+	
+	
+	<div class="container col-md-12">
+	{% include "accounts/_update-user-name.html" %}
+	</div>	
+	<div class="container col-md-12">
+	{% include "accounts/_update-email-address.html" %}
+	</div>
+	<div class="container col-md-12">
+	{% include "accounts/_update-password.html" %}
+	</div>
+	<div class="container col-md-12">
+	{% include "accounts/_update-postal-address.html" %}
+	</div>
+	
+	
+	
+	
+	</div>
+	
+<!-- End Overview Tab -->
+
+<!-- Orders Tab -->
+      <div role="tabpanel" class="tab-pane fade " id="orders">
+      <h3>He the user can see the orders that then have placed in the past.</h3>
+      <p>How this will look I do not know. If for now it shows a list that will bring the user to a page that is very like the cart page for review</p>
+      
+		     
+      
+      </div>
+<!-- End Orders Tab -->
+
+
+
+
+
+<!-- Tab content for the add product page. This page should only have access from admins -->
+
+<div role="tabpanel" class="tab-pane fade " id="addproduct">
+
+<div class="container col-md-12">
+{% include "accounts/_add-product.html" %}
+</div>
+
+</div>
+
+
+
+<!-- List of products that have been added. user can do small updates here -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-list">
+<div class="container col-md-12">
+
+
+{% for i in list %}
+{% include "accounts/_owner-product-view.html" %}
+{% endfor %}
+
+
+</div>
+
+     </div>
+
+
+
+
+<!-- Orders that the admin has. -->
+      <div role="tabpanel" class="tab-pane fade " id="admin-product-orders">
+<div class="container col-md-12">
+<h2>This section needs work</h2>
+<p>Not sure to what format or data that would be required here.</p>
+<p>May get some feed back on what is best to put here</p>
+    <h3>product Orders</h3>
+      <p>I do not know if the this should only show current open order or if it should show past orders too.</p>
+      <p>Work is need to be done here but I feel that feed back could be need on what is the best way of layout out the few that pages that go here. Some points that mite be wrote noting are:</p>
+      <ul>
+      <li>An email will want to be able to be sent to the person that bought the products</li>
+      <li>Some way of sending email to the user if there is a problem with the order</li>
+      <li>price, shipping, order date & time and etc..</li>
+      </ul>
+</div>     
+      </div>
+
+
+
+      
+
+</div>
+<!-- End Tab Content -->
+      
+      
+      
+      
+      
+      
+      
+      
+
+</div>
+
+
+
+
+
+<!-- Block of data-->
+
+
+{% endblock %}
+
