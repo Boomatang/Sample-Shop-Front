@@ -1,4 +1,7 @@
 import os
+
+from flask_uploads import UploadConfiguration
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -18,17 +21,21 @@ class Config:
     SITE_POSTS_PER_PAGE = 20
     SITE_FOLLOWERS_PER_PAGE = 50
     SITE_COMMENTS_PER_PAGE = 30
-    SITE_SLOW_DB_QUERY_TIME=0.5
-    SITE_COVERAGE=True
+    SITE_SLOW_DB_QUERY_TIME = 0.5
+    SITE_COVERAGE = True
+    UPLOADS_PHOTO_DEST = 'app/static/uploads'
+    UPLOADS_DEFAULT_DEST = 'app/static'
 
     @staticmethod
     def init_app(app):
         pass
 
+
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
+    UploadConfiguration.destination = Config.UPLOADS_PHOTO_DEST
 
 
 class TestingConfig(Config):
@@ -64,9 +71,6 @@ class ProductionConfig(Config):
             secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
-
-
-
 
 
 config = {

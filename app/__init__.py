@@ -5,7 +5,10 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 # from flask.ext.login import LoginManager
 # from flask.ext.pagedown import PageDown
-from config import config
+from flask_uploads import configure_uploads, UploadConfiguration
+
+from app.main.views import photos
+from config import config, Config
 
 bootstrap = Bootstrap()
 # mail = Mail()
@@ -20,7 +23,11 @@ db = SQLAlchemy()
 
 def create_app(config_name):
     app = Flask(__name__)
+
     app.config.from_object(config[config_name])
+
+    configure_uploads(app, photos)
+
     config[config_name].init_app(app)
 
     bootstrap.init_app(app)

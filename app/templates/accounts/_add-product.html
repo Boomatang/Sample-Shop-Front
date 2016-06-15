@@ -1,50 +1,52 @@
 
-<form class="form-horizontal">
+<form class="form-horizontal" name="add-product" enctype="multipart/form-data" method="post" action="{{ url_for('auth.account') }}">
 <fieldset>
+  {{ add_product_form.hidden_tag() }}
 
 <!-- Form Name -->
 <legend>Add Products</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Product Name</label>  
+  <label class="col-md-4 control-label" for="name">{{ add_product_form.name.label }}</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="Product Name" class="form-control input-md">
+    {{ add_product_form.name(placeholder=add_product_form.name.description,  class="form-control input-md") }}
   <span class="help-block">What is the display name of you product</span>  
   </div>
 </div>
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="proDesc">Description</label>
+  <label class="col-md-4 control-label" for="description">{{ add_product_form.description.label }}</label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="proDesc" name="proDesc">Product Description</textarea>
+    {{ add_product_form.description(placeholder=add_product_form.description.description,  class="form-control input-md") }}
   </div>
 </div>
 
 <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="uploadimage">Upload Image</label>
+  <label class="col-md-4 control-label" for="image">{{ add_product_form.image.label }}</label>
   <div class="col-md-4">
-    <input id="uploadimage" name="uploadimage" class="input-file" type="file">
+    {{ add_product_form.image(class="form-control input-md input-file btn btn-success") }}
   </div>
 </div>
 
 <!-- Prepended text-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="cost">Cost</label>
+  <label class="col-md-4 control-label" for="cost">{{ add_product_form.cost.label }}</label>
   <div class="col-md-4">
     <div class="input-group">
       <span class="input-group-addon">EUR</span>
-      <input id="cost" name="cost" class="form-control" placeholder="000.00" type="text">
+      {{ add_product_form.cost(placeholder=add_product_form.cost.description,  class="form-control input-md") }}
     </div>
     <p class="help-block">What is the sale value of the product</p>
   </div>
 </div>
 
 <!-- Select Basic -->
+<!--TODO add in the function to set the shipping type -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="postgroup">Shipping Cost</label>
+  <label class="col-md-4 control-label" for="postgroup">Shipping Cost <strong>This needs input</strong></label>
   <div class="col-md-4">
     <select id="postgroup" name="postgroup" class="form-control">
       <option value="1">Cost 1</option>
@@ -56,10 +58,11 @@
 
 <!-- Multiple Checkboxes (inline) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="forsale">Place product for sale on upload.</label>
+  <label class="col-md-4 control-label" for="forsale">{{ add_product_form.active.label }}</label>
   <div class="col-md-4">
     <label class="checkbox-inline" for="forsale-0">
-      <input type="checkbox" name="forsale" id="forsale-0" value="Yes">
+      <!--TODO formatting needed here-->
+      {{ add_product_form.active(placeholder=add_product_form.active.description,  class="form-control input-md") }}
       Yes
     </label>
   </div>
