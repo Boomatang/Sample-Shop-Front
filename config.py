@@ -23,6 +23,7 @@ class Config:
     SITE_COMMENTS_PER_PAGE = 30
     SITE_SLOW_DB_QUERY_TIME = 0.5
     SITE_COVERAGE = True
+    UPLOAD_DIR = 'app/static/uploads'
     UPLOADS_PHOTO_DEST = 'app/static/uploads'
     UPLOADS_DEFAULT_DEST = 'app/static'
 
@@ -48,6 +49,7 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+
 
     @classmethod
     def init_app(cls, app):

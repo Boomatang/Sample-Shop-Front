@@ -29,7 +29,7 @@ def create_app(config_name):
     configure_uploads(app, photos)
 
     config[config_name].init_app(app)
-
+    app.UPLOAD_DIR = Config.UPLOAD_DIR
     bootstrap.init_app(app)
     # mail.init_app(app)
     # moment.init_app(app)
