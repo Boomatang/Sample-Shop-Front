@@ -1,6 +1,11 @@
 import os
 from PIL import Image
 from pathlib import Path as P
+
+
+from . import db
+from .model import Images
+
 folder_list = ['150x200', '171x180', '200x240', '250x300', '319x200', '75x90']
 UPLOADS_PHOTO = 'static/uploads'
 
@@ -63,6 +68,12 @@ def get_all(start_point):
     for ifile in contents:
         if ifile.is_file() and ext_allowed(ifile.name):
             setup_img(ifile, IMAGE_SAVE_PATH)
+
+
+def get_default_image(img_id):
+    query = db.session.query(Images).filter(Images.imgID == img_id).one()
+    return query.name
+
 
 if __name__ == '__main__':
 

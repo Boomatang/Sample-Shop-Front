@@ -1,24 +1,35 @@
-import os
 from flask import render_template, request, redirect, url_for, flash
-from flask_uploads import UploadSet, IMAGES
 from werkzeug.utils import secure_filename
 
 from config import Config
 from . import main
-
-photos = UploadSet('photos', IMAGES)
+from .. import db
+from ..functions import get_default_image
+from ..model import Product, Images
 
 
 @main.route('/')
 def index():
-    values = range(0, 8)
+    values = db.session.query(Product).filter(Product.available == 1).limit(12)
+    values = values.all()
+    #values = range(0, 8)
+
+    for value in values:
+        name = get_default_image(value.default_image_ID)
+        value.image = name
 
     return render_template("main/index.html", list=values)
 
 
 @main.route("/products")
 def products():
-    values = range(0, 25)
+    values = db.session.query(Product).filter(Product.available == 1).limit(12)
+    values = values.all()
+    # values = range(0, 8)
+
+    for value in values:
+        name = get_default_image(value.default_image_ID)
+        value.image = name
 
     return render_template("main/products.html", list=values)
 
@@ -30,32 +41,18 @@ def contact():
 
 @main.route("/products/<item>")
 def product_view(item):
-    return render_template("main/product-view.html")
+
+    product = db.session.query(Product).filter(Product.proID == item).one()
+
+    image_name = get_default_image(product.default_image_ID)
+    product.image = image_name
+
+    return render_template("main/product-view.html", product=product)
 
 
 @main.route("/cart")
 def cart():
     values = range(0, 4)
     return render_template("main/cart.html", values=values)
-
-
-@main.route('/upload', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST' and 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
-        return filename
-    return '''
-    <html>
-    <head>
-    <title>Uploads</title>
-    </head>
-    <body>
-    <form method=POST enctype=multipart/form-data action="/upload">
-        <input type="file" name="photo">
-        <input type="submit">
-    </form>
-    </body>
-    </html>
-    '''
 
 

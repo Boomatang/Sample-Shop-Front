@@ -7,7 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 # from flask.ext.pagedown import PageDown
 from flask_uploads import configure_uploads, UploadConfiguration
 
-from app.main.views import photos
 from config import config, Config
 
 bootstrap = Bootstrap()
@@ -26,10 +25,7 @@ def create_app(config_name):
 
     app.config.from_object(config[config_name])
 
-    configure_uploads(app, photos)
-
     config[config_name].init_app(app)
-    app.UPLOAD_DIR = Config.UPLOAD_DIR
     bootstrap.init_app(app)
     # mail.init_app(app)
     # moment.init_app(app)
