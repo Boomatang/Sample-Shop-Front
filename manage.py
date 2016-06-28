@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 import os
+
+from app.model import Product, Owners, Images
+
 COV = None
 if os.environ.get('SITE_COVERAGE'):
     import coverage
@@ -16,7 +19,7 @@ migrate = Migrate(app, db)
 
 
 def make_shell_context():
-    return dict(app=app, db=db) #, Product=Product, Owners=Owners, Images=Images)
+    return dict(app=app, db=db, Product=Product, Owners=Owners, Images=Images)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 

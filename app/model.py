@@ -24,6 +24,7 @@ class Images(db.Model):
     name = db.Column(db.String(128))
     proID = db.Column(db.Integer)
     ForeignKeyConstraint([proID], [Product.proID])
+    db.relationship('Product', backref="Images")
 
     def __repr__(self):
         return "Image: %s" % self.name
@@ -46,3 +47,12 @@ class User(db.Model):
 
     def __repr__(self):
         return " User %s, %s" % (self.ID, self.username)
+
+
+class Role(db.Model):
+    __tablename__ = 'roles'
+    ID = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+
+    def __repr__(self):
+        return '<Role %r>' % self.name

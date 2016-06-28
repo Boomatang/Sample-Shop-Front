@@ -22,8 +22,6 @@ def register():
         password = form.password.data
         now = datetime.utcnow()
 
-        
-
     return render_template('auth/register.html', form=form)
 
 
