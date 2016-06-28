@@ -3,7 +3,7 @@
   <!--   a product -->
     <div class="conatiner col-xs-6 col-sm-4 col-md-3 border-light">
     
-    	<a href="#" class=""> 	
+    	<a href="{{ url_for('main.product_view', item=product.proID) }}" class=""> 	
     		<div class="col-md-10 col-md-offset-1">
      			<img src="{{ url_for('static', filename='images/171x180/' + product.image) }}" alt="..." class="img-responsive center-block">
 			</div>

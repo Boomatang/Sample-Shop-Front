@@ -4,34 +4,23 @@ from werkzeug.utils import secure_filename
 from config import Config
 from . import main
 from .. import db
-from ..functions import get_default_image
+from ..functions import get_default_image, get_products
 from ..model import Product, Images
+
+
+
 
 
 @main.route('/')
 def index():
-    values = db.session.query(Product).filter(Product.available == 1).limit(12)
-    values = values.all()
-    #values = range(0, 8)
 
-    for value in values:
-        name = get_default_image(value.default_image_ID)
-        value.image = name
-
-    return render_template("main/index.html", list=values)
+    return render_template("main/index.html", list=get_products())
 
 
 @main.route("/products")
 def products():
-    values = db.session.query(Product).filter(Product.available == 1).limit(12)
-    values = values.all()
-    # values = range(0, 8)
 
-    for value in values:
-        name = get_default_image(value.default_image_ID)
-        value.image = name
-
-    return render_template("main/products.html", list=values)
+    return render_template("main/products.html", list=get_products())
 
 
 @main.route("/contact")

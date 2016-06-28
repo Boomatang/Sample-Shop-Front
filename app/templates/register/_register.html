@@ -1,32 +1,35 @@
 <div class="container-fluid">
     <section class="container">
-		<div class="container-page">				
+		<form class="container-page" name="registration" method="POST" action="auth.registration_pass">
+		{{ form.hidden_tag() }}				
+
 			<div class="col-md-6">
 				<h3 class="dark-grey">Registration</h3>
+					
 				
 				<div class="form-group col-lg-12">
-					<label>Username</label>
-					<input type="" name="" class="form-control" id="" value="">
+					<label>{{form.username.label}}</label>
+					{{ form.username(placeholder=form.username.description, class="form-control") }}
 				</div>
 				
 				<div class="form-group col-lg-6">
-					<label>Password</label>
-					<input type="password" name="" class="form-control" id="" value="">
+					<label>{{form.password.label}}</label>
+					{{ form.username(placeholder=form.password.description, class="form-control") }}
 				</div>
 				
 				<div class="form-group col-lg-6">
-					<label>Repeat Password</label>
-					<input type="password" name="" class="form-control" id="" value="">
+					<label>{{form.password2.label}}</label>
+					{{ form.password2(placeholder=form.password2.description, class="form-control") }}
 				</div>
 								
 				<div class="form-group col-lg-6">
-					<label>Email Address</label>
-					<input type="" name="" class="form-control" id="" value="">
+					<label>{{form.email.label}}</label>
+					{{ form.email(placeholder=form.email.description, class="form-control") }}
 				</div>
 				
 				<div class="form-group col-lg-6">
-					<label>Repeat Email Address</label>
-					<input type="" name="" class="form-control" id="" value="">
+					<label>{{form.email2.label}}</label>
+					{{ form.email2(placeholder=form.email.description, class="form-control") }}
 				</div>			
 				
 				<div class="col-sm-6">
@@ -57,6 +60,6 @@
 				
 				<button type="submit" class="btn btn-primary">Register</button>
 			</div>
-		</div>
+		</form>
 	</section>
 </div>

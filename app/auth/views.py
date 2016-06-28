@@ -1,18 +1,35 @@
 import os
+from datetime import datetime
+
 from flask import render_template, url_for, redirect, request
 from sqlalchemy import func
 
 from .. import db
 from . import auth
-from .forms import AddProduct
+from .forms import AddProduct, RegistrationForm
 from ..model import Product, Images
 from werkzeug import secure_filename
-from ..functions import get_all, UPLOADS_PHOTO_DIR
+from ..functions import get_all, UPLOADS_PHOTO_DIR, get_products
 
 
 @auth.route('/register')
 def register():
-    return render_template('auth/register.html')
+    form = RegistrationForm()
+
+    if form.validate_on_submit():
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        now = datetime.utcnow()
+
+        
+
+    return render_template('auth/register.html', form=form)
+
+
+@auth.route('/register/pass')
+def registration_pass():
+    return "Passed"
 
 
 @auth.route('/login')
@@ -27,8 +44,10 @@ def logout():
 
 @auth.route('/account', methods=['POST', 'GET'])
 def account():
-    values = range(0, 5)
     add_product_form = AddProduct()
+
+    product_list = get_products()
+
 
     if add_product_form.validate_on_submit():
         # TODO data input need to be made user safe
@@ -81,6 +100,6 @@ def account():
         return img_name
 
     return render_template('auth/account.html',
-                           list=values,
-                           add_product_form=add_product_form)
+                           add_product_form=add_product_form,
+                           product_list=product_list)
 

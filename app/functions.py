@@ -4,7 +4,7 @@ from pathlib import Path as P
 
 
 from . import db
-from .model import Images
+from .model import Images, Product
 
 folder_list = ['150x200', '171x180', '200x240', '250x300', '319x200', '75x90']
 UPLOADS_PHOTO = 'static/uploads'
@@ -74,6 +74,14 @@ def get_default_image(img_id):
     query = db.session.query(Images).filter(Images.imgID == img_id).one()
     return query.name
 
+def get_products(supplier=None):
+    values = db.session.query(Product).filter(Product.available == 1).limit(12)
+    values = values.all()
+    # values = range(0, 8)
+    for value in values:
+        name = get_default_image(value.default_image_ID)
+        value.image = name
+    return values
 
 if __name__ == '__main__':
 

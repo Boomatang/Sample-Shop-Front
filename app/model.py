@@ -33,3 +33,16 @@ class Owners(db.Model):
     __tablename__ = 'owners'
     owner_ID = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64))
+
+
+class User(db.Model):
+    __tablename__ = 'users'
+
+    ID = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String)
+    emial = db.Column(db.String)
+    password = db.Column(db.String)
+    signup_date = db.Column(db.Date)
+
+    def __repr__(self):
+        return " User %s, %s" % (self.ID, self.username)
