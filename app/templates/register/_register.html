@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <section class="container">
-		<form class="container-page" name="registration" method="POST" action="auth.registration_pass">
+		<form class="container-page" name="registration" method="POST" action="{{ url_for('auth.register') }}">
 		{{ form.hidden_tag() }}				
 
 			<div class="col-md-6">
@@ -14,7 +14,7 @@
 				
 				<div class="form-group col-lg-6">
 					<label>{{form.password.label}}</label>
-					{{ form.username(placeholder=form.password.description, class="form-control") }}
+					{{ form.password(placeholder=form.password.description, class="form-control") }}
 				</div>
 				
 				<div class="form-group col-lg-6">

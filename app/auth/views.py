@@ -12,7 +12,7 @@ from werkzeug import secure_filename
 from ..functions import get_all, UPLOADS_PHOTO_DIR, get_products
 
 
-@auth.route('/register')
+@auth.route('/register', methods=['POST', 'GET'])
 def register():
     form = RegistrationForm()
 
@@ -21,7 +21,7 @@ def register():
         email = form.email.data
         password = form.password.data
         now = datetime.utcnow()
-
+        return redirect(url_for('auth.registration_pass'))
     return render_template('auth/register.html', form=form)
 
 
@@ -45,7 +45,6 @@ def account():
     add_product_form = AddProduct()
 
     product_list = get_products()
-
 
     if add_product_form.validate_on_submit():
         # TODO data input need to be made user safe

@@ -8,9 +8,6 @@ from ..functions import get_default_image, get_products
 from ..model import Product, Images
 
 
-
-
-
 @main.route('/')
 def index():
 

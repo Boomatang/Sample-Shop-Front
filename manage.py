@@ -26,14 +26,15 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 def test(coverage=False):
-    """Run the unit tests."""
+    """Run the unit test."""
     if coverage and not os.environ.get('FLASK_COVERAGE'):
         import sys
         os.environ['FLASK_COVERAGE'] = '1'
         os.execvp(sys.executable, [sys.executable] + sys.argv)
-    import unittest
-    tests = unittest.TestLoader().discover('tests')
-    unittest.TextTestRunner(verbosity=2).run(tests)
+
+    import pytest
+    pytest.main('-v')
+
     if COV:
         COV.stop()
         COV.save()
@@ -58,8 +59,8 @@ def profile(length=25, profile_dir=None):
 @manager.command
 def deploy():
     """Run deployment tasks."""
-    from flask.ext.migrate import upgrade
-    from app.models import Role, User
+    from flask_migrate import upgrade
+    from app.model import Role, User
 
     # migrate database to latest revision
     upgrade()
