@@ -35,3 +35,10 @@ class RegistrationForm(Form):
     def validate_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('Username already in use.')
+
+
+class LoginForm(Form):
+    email = StringField('Email', validators=[data_required(), Length(1, 64),
+                                             Email()])
+    password = PasswordField('Password', validators=[data_required()])
+    remember_me = BooleanField('Remember me')

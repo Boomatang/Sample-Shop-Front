@@ -1,4 +1,5 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, make_response
+from sqlalchemy.orm.exc import NoResultFound
 from werkzeug.utils import secure_filename
 
 from config import Config
@@ -8,7 +9,7 @@ from ..functions import get_default_image, get_products
 from ..model import Product, Images
 
 
-@main.route('/')
+@main.route('/', methods=['POST', 'GET'])
 def index():
 
     return render_template("main/index.html", list=get_products())
@@ -28,12 +29,17 @@ def contact():
 @main.route("/products/<item>")
 def product_view(item):
 
-    product = db.session.query(Product).filter(Product.proID == item).one()
+    try:
+        product = db.session.query(Product).filter(Product.proID == item).one()
 
-    image_name = get_default_image(product.default_image_ID)
-    product.image = image_name
+        image_name = get_default_image(product.default_image_ID)
+        product.image = image_name
 
-    return render_template("main/product-view.html", product=product)
+        return render_template("main/product-view.html", product=product)
+    except NoResultFound:
+        response = make_response(render_template('errors/404.html'), 404)
+
+        return response
 
 
 @main.route("/cart")

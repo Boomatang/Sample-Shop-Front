@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 # from flask.ext.mail import Mail
 # from flask.ext.moment import Moment
 from flask_sqlalchemy import SQLAlchemy
-# from flask.ext.login import LoginManager
+from flask_login import LoginManager
 # from flask.ext.pagedown import PageDown
 from flask_uploads import configure_uploads, UploadConfiguration
 
@@ -15,9 +15,9 @@ bootstrap = Bootstrap()
 db = SQLAlchemy()
 # pagedown = PageDown()
 
-# login_manager = LoginManager()
-# login_manager.session_protection = 'strong'
-# login_manager.login_view = 'auth.login'
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'auth.login'
 
 
 def create_app(config_name):
@@ -30,7 +30,7 @@ def create_app(config_name):
     # mail.init_app(app)
     # moment.init_app(app)
     db.init_app(app)
-    # login_manager.init_app(app)
+    login_manager.init_app(app)
     # pagedown.init_app(app)
 
     from .testing import testing as testing_blueprint

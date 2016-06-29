@@ -1,12 +1,17 @@
 <div class="container col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" style="text-align: center">    
-<form>
+<form method="POST" action="{{ url_for('main.index') }}">
+	{{ form.hidden_tag() }}
+
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" style="text-align: center">
+    <label for="Email">{{ form.email.label }}</label>
+    {{ form.email(class="form-control", id="Email", placeholder="Email", style="text-align: center") }}
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="text-align: center" >
+    <label for="Password">{{ form.password.label }}</label>
+    {{ form.password(class="form-control", id="password", placeholder="Password", style="text-align: center") }}	  
+  </div>
+  <div class="form-group">
+	{{ form.remember_me() }}<span>&nbsp;&nbsp;&nbsp;{{ form.remember_me.label }}</span>  
   </div>
   <button type="submit" class="btn btn-success">Login</button>
 </form>
