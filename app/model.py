@@ -3,6 +3,7 @@ from . import db
 from sqlalchemy import ForeignKeyConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
 class Product(db.Model):
     __tablename__ = 'products'
     proID = db.Column(db.Integer, primary_key=True, )
@@ -15,7 +16,7 @@ class Product(db.Model):
     stock_qty = db.Column(db.Integer)
 
     def __repr__(self):
-        return "Product %s; Name %s" % (self.proID, self.title)
+        return "<Product %s; Name> %s" % (self.proID, self.title)
 
 
 class Images(db.Model):
@@ -27,7 +28,7 @@ class Images(db.Model):
     db.relationship('Product', backref="Images")
 
     def __repr__(self):
-        return "Image: %s" % self.name
+        return "<Image: %s>" % self.name
 
 
 class Owners(db.Model):
@@ -57,7 +58,7 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return " User %s, %s" % (self.ID, self.username)
+        return "<User %s, %s>" % (self.ID, self.username)
 
 
 class Role(db.Model):

@@ -1,5 +1,5 @@
 from flask import url_for
-from toollib.tool_lib import random_users
+from toollib.tool_lib import random_users, random_products, add_default_images
 from app import create_app, db
 import pytest
 
@@ -14,7 +14,10 @@ def app(request):
 
     users = list(random_users())
     db.session.add_all(users)
+    db.session.add_all(list(random_products(3)))
     db.session.commit()
+    # TODO fix this as it is to slow for testing
+    add_default_images()
 
     def tearDown():
         db.session.remove()

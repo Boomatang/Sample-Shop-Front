@@ -5,6 +5,7 @@ from pathlib import Path as P
 
 from . import db
 from .model import Images, Product
+from sqlalchemy.orm.exc import NoResultFound
 
 folder_list = ['150x200', '171x180', '200x240', '250x300', '319x200', '75x90']
 UPLOADS_PHOTO = 'static/uploads'
@@ -54,10 +55,13 @@ def setup_img(image, save):
 def ext_allowed(check):
     allowed = ['jpg', 'png']
     show = check.split('.')
-    if show[1].lower() in allowed:
-        return True
-    else:
-        return False
+    try:
+        if show[1].lower() in allowed:
+            return True
+        else:
+            return False
+    except IndexError:
+        return None
 
 
 def get_all(start_point):
@@ -71,11 +75,15 @@ def get_all(start_point):
 
 
 def get_default_image(img_id):
-    query = db.session.query(Images).filter(Images.imgID == img_id).one()
-    return query.name
+    try:
+        query = db.session.query(Images).filter(Images.imgID == img_id).one()
+        return query.name
+    except NoResultFound:
+        return None
 
-def get_products(supplier=None):
-    values = db.session.query(Product).filter(Product.available == 1).limit(12)
+
+def get_products(supplier=None, limit=12):
+    values = db.session.query(Product).filter(Product.available == 1).limit(limit)
     values = values.all()
     # values = range(0, 8)
     for value in values:

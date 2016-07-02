@@ -2,7 +2,7 @@
 import os
 
 from app.model import Product, Owners, Images
-from toollib import random_users
+from toollib import random_users, random_products, add_default_images
 
 COV = None
 if os.environ.get('SITE_COVERAGE'):
@@ -19,7 +19,9 @@ migrate = Migrate(app, db)
 
 
 def make_shell_context():
-    return dict(app=app, db=db, Product=Product, Owners=Owners, Images=Images, random_users=random_users)
+    return dict(app=app, db=db, Product=Product, Owners=Owners, Images=Images,
+                random_users=random_users, random_products=random_products,
+                add_default_images=add_default_images)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 
