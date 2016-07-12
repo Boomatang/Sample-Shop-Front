@@ -14,8 +14,11 @@ from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 
 app = create_app(os.getenv('SITE_CONFIG') or 'default')
+# app = create_app('debug')
 manager = Manager(app)
 migrate = Migrate(app, db)
+
+
 
 
 def make_shell_context():

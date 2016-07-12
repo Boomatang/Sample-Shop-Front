@@ -30,13 +30,13 @@
 <!-- 			The cost should change this will be a flask thing -->
 			<a href="{{ url_for('main.cart') }}"> <span class="glyphicon glyphicon-shopping-cart"></span> Cart&nbsp;&euro;23.99&nbsp;&nbsp;&nbsp;</a>
 			
-
+			{% if current_user.is_active %}
             <a class="active" href="{{ url_for('auth.logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout&nbsp;&nbsp;&nbsp;</a>
-
+			{% else %}
 
 		    <a class="active" href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;</a>
 		    <a class="active" href="{{ url_for('auth.register') }}"><span class="glyphicon glyphicon-pencil"></span> Register</a>
-
+			{% endif %}
             </h5>
 	  </div>
       </ul>

@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 from flask import render_template, url_for, redirect, request, flash
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, login_required, logout_user
 from sqlalchemy import func
 
 from .. import db
@@ -12,7 +12,7 @@ from ..model import Product, Images, User
 from werkzeug import secure_filename
 from ..functions import get_all, UPLOADS_PHOTO_DIR, get_products
 
-'''
+
 @auth.before_app_request
 def before_request():
     if current_user.is_authenticated:
@@ -21,7 +21,7 @@ def before_request():
 
             # todo this should be fixed
             return redirect(url_for('auth.login'))
-'''
+
 
 @auth.route('/register', methods=['POST', 'GET'])
 def register():
@@ -55,23 +55,26 @@ def registration_pass():
 @auth.route('/login', methods=['POST', 'GET'])
 def login():
     form = LoginForm()
-
-    return render_template('auth/login.html', form=form)
-
-
-@auth.route('/logout')
-def logout():
-    form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user is not None and user.verify_password(form.password.data):
             login_user(user, form.remember_me.data)
+            flash('Welcome, You have been logged in.', 'info')
             return redirect(request.args.get('next') or url_for('main.index'))
-        flash('Invalid username or password.')
+        flash('Invalid username or password', 'error')
+    return render_template('auth/login.html', form=form)
+
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('You have been logged out', 'update')
     return redirect(url_for('main.index'))
 
 
 @auth.route('/account', methods=['POST', 'GET'])
+@login_required
 def account():
     add_product_form = AddProduct()
 
@@ -130,4 +133,5 @@ def account():
     return render_template('auth/account.html',
                            add_product_form=add_product_form,
                            product_list=product_list)
+
 

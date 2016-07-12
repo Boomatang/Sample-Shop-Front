@@ -20,13 +20,13 @@ def test_owners_create():
 
 
 def test_user_create():
-    user = User(ID=1, username='TIMTIM')
+    user = User(id=1, username='TIMTIM')
 
     assert type(user) == User
 
 
 def test_user_password_read():
-    user = User(ID=1, username='TIMTIM')
+    user = User(id=1, username='TIMTIM')
 
     try:
         user.password
@@ -36,7 +36,7 @@ def test_user_password_read():
 
 
 def test_password_hash():
-    user = User(ID=1, username='TIMTIM')
+    user = User(id=1, username='TIMTIM')
     word = "haircut"
 
     user.password = word
